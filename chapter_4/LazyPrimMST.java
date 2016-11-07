@@ -85,7 +85,7 @@ public class LazyPrimMST {
             Edge e = pq.delMin();
             int v = e.either();
             int w = e.other(v);
-            if(marked[v] && marked[w]) continue;
+            if(marked[v] && marked[w]) continue;//跳过失效的边
             mst.enqueue(e);
             if(!marked[v]) visit(G, v);
             if(!marked[w]) visit(G, w);
